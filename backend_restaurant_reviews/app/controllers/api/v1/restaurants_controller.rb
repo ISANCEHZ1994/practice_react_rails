@@ -1,6 +1,10 @@
-module API # we want to namespace these inside of a module
+module Api # we want to namespace these inside of a module
     module V1 # similar to what we did in the routes
         class RestaurantsController < ApplicationController # Regular class in Ruby
+            protect_from_forgery with: :null_session # wanted to create a new Restaurant however there was an error
+            # InvalidAuthenticityToken - happens because we wanted to make a POST Request without a valid C surf token
+            # Rails protects against this by default!
+
             def index
                 restaurants = Restaurant.all 
                 render json: RestaurantSerializer.new(restaurants, options).serialized_json

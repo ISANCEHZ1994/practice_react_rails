@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root 'pages#index'
+    # root 'pages#index'
  
     namespace :api do # https://paweljw.github.io/2017/07/rails-5.1-api-app-part-3-api-versioning/
       namespace :v1 do 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       end
     end
 
-    get '*path', to: 'pages#index', via: :all 
+    # get '*path', to: 'pages#index', via: :all 
     # Will route requests that aren't for exsiting paths predefined in our API BACK to index path
     # Once React-Router plays a role - this will allow us to handle routing to React Components 
     # Without interfering with actual Rails routes for API

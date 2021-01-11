@@ -3,7 +3,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.1]
     create_table :restaurants do |t|
       t.string :name
       t.string :image_url
-      t.string :slugify
+      t.string :slug
 
       t.timestamps
     end
